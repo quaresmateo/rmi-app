@@ -21,7 +21,7 @@ def start_resquest():
         print(f'Enviado às {now:%H:%M:%S} \n')
         response = server.send_response(text)
         print(f'Recibido em {response}')
-        scan = input()
+        scanf = input()
 
 
 if __name__ == '__main__':
