@@ -5,13 +5,13 @@ Iniciar localhost
 ```
 python3 -m Pyro4.naming
 ```
-Start the Server
+Iniciar o sevidor
 
 ```
  python3 server.py
  ```
 
-Start the Client
+Iniciar o cliente
 
  ```
 python3 client.py
