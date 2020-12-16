@@ -19,8 +19,8 @@ def start_resquest():
         text = input("... ")
         now = datetime.now()
         print(f'Enviado às {now:%H:%M:%S:%f} \n')
-        response = server.send_response(text)
-        print(f'Resposta em {response:%H:%M:%S:%f}')
+        response = server.send_response(option)
+        print(response)
         scanf = input()
 
 
