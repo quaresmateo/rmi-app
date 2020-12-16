@@ -18,9 +18,9 @@ def start_resquest():
         print('[7] Ver infomações de um usuário')
         text = input("... ")
         now = datetime.now()
-        print(f'Enviado às {now:%H:%M:%S} \n')
+        print(f'Enviado às {now:%H:%M:%S:%f} \n')
         response = server.send_response(text)
-        print(f'Recibido em {response}')
+        print(f'Resposta em {response:%H:%M:%S:%f}')
         scanf = input()
 
 
