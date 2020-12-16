@@ -5,7 +5,7 @@ import Pyro4
 
 @Pyro4.expose
 class Bot(object):
-    def send_response(self, text):
+    def send_response(self, option):
         now = datetime.now()
         print(f'{text} - Recebido às {now:%H:%M:%S:%f} \n')
         return now
