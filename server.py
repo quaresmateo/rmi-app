@@ -7,8 +7,9 @@ import Pyro4
 class Bot(object):
     def send_response(self, option):
         now = datetime.now()
-        print(f'{text} - Recebido às {now:%H:%M:%S:%f} \n')
-        return now
+        print(f'{option.text} - Recebido às {now:%H:%M:%S:%f} \n')
+
+        return 0
 
 
 def start_server():
