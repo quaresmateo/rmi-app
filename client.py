@@ -1,30 +1,14 @@
 from datetime import datetime
+from Person import Person
+from Option import Option
 
 import Pyro4
 
 server = Pyro4.Proxy(f"PYRONAME:rmi.server")
 
 
-class Person:
-    def __init__(self, email, name, lastname, picture, address, formation, skills, expirience):
-        self.email = email
-        self.name = name
-        self.lastname = lastname
-        self.picture = picture
-        self.address = address
-        self.formation = formation
-        self.skills = skills
-        self.expirience = expirience
-
-
-class Option:
-    def __init__(self, text, data):
-        self.text = text
-        self.data = data
-
-
 def start_resquest():
-    option = Option('', 0)
+    option = ''
 
     while (option != 'exit'):
         print('Escolha a as opções')
@@ -36,9 +20,9 @@ def start_resquest():
         print('[6] Ver todos os usuários')
         print('[7] Ver infomações de um usuário')
 
-        option.text = input("... ")
+        option = input("... ")
 
-        if(option.text == "1"):
+        if(option == "1"):
             # Criar usuário
             email = input('Email: ')
             name = input('Nome: ')
@@ -48,11 +32,19 @@ def start_resquest():
             formation = input('Formação acadêmica: ')
             skills = input('Habilidades: ')
             expirience = input('Experiência: ')
-            option.data = Person(email, name, lastname, picture,
-                                 address, formation, skills, expirience)
+            person = {
+                'email': email,
+                'name': name,
+                'lastname': lastname,
+                'picture': picture,
+                'address': address,
+                'formation': formation,
+                'skills': skills,
+                'expirience': expirience
+            }
         now = datetime.now()
         print(f'Enviado às {now:%H:%M:%S:%f} \n')
-        response = server.send_response(option)
+        response = server.send_response(option, person)
         print(response)
         scanf = input()
 
