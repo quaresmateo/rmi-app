@@ -10,7 +10,7 @@ orm.set_sql_debug(True)
 
 
 class Person(db.Entity):
-    email = orm.Required(str).is_unique()
+    email = orm.Required(str, unique=True)
     name = orm.Required(str)
     lastname = orm.Required(str)
     picture = orm.Required(str)
@@ -31,9 +31,17 @@ class Bot(object):
         if option == '1':
             with orm.db_session:
                 # Criar pessoa no banco de dados
-                # person = Person(name='Bob', age=30)
-                # commit()
-                pass
+                person = Person(
+                    email=data['email'],
+                    name=data['name'],
+                    lastname=data['lastname'],
+                    picture=data['picture'],
+                    address=data['address'],
+                    formation=data['formation'],
+                    skills=data['skills'],
+                    expirience=data['expirience']
+                )
+                orm.commit()
         elif option == '2':
             pass
         elif option == '3':
@@ -49,7 +57,7 @@ class Bot(object):
         else:
             data = 'Opção inválida'
 
-        return (data, f'Recebido às {now:%H:%M:%S:%f} \n')
+        return (person, f'Recebido às {now:%H:%M:%S:%f} \n')
 
 
 def start_server():
