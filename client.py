@@ -65,11 +65,16 @@ def start_resquest():
         else:
             data = 'Opção inválida'
 
+        # Tempo do cliente
         now = datetime.now()
         print(f'Enviado às {now:%H:%M:%S:%f} \n')
+
+        # Resposta e tempo do servidor
         (response, time) = server.send_response(option, data)
+
         print(response)
         print(time)
+
         input('\n `Enter` para continuar...')
 
 
