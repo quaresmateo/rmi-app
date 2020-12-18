@@ -9,6 +9,7 @@ server = Pyro4.Proxy(f"PYRONAME:rmi.server")
 
 def start_resquest():
     option = ''
+    person = {}
 
     while (option != 'exit'):
         print('Escolha a as opções')
