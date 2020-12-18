@@ -70,7 +70,7 @@ def start_resquest():
         (response, time) = server.send_response(option, data)
         print(response)
         print(time)
-        scanf = input('\n `Enter` para continuar...')
+        input('\n `Enter` para continuar...')
 
 
 if __name__ == '__main__':
