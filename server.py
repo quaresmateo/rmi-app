@@ -29,7 +29,11 @@ class Bot(object):
         now = datetime.now()
         print(f'{option} - Recebido às {now:%H:%M:%S:%f} \n')
         if option == '1':
-            pass
+            with orm.db_session:
+                # Criar pessoa no banco de dados
+                # person = Person(name='Bob', age=30)
+                # commit()
+                pass
         elif option == '2':
             pass
         elif option == '3':
