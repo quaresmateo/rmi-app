@@ -1,4 +1,4 @@
-Para rodar a aplicação é necessário ter o Pyro 4 instalado.
+Para rodar a aplicação é necessário ter o Pyro 4 instalado e o Pony ORM.
 
 Iniciar localhost
 
