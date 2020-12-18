@@ -67,9 +67,9 @@ def start_resquest():
 
         now = datetime.now()
         print(f'Enviado às {now:%H:%M:%S:%f} \n')
-        (response, date) = server.send_response(option, data)
+        (response, time) = server.send_response(option, data)
         print(response)
-        print(date)
+        print(time)
         scanf = input('\n `Enter` para continuar...')
 
 
