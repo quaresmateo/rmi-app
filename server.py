@@ -1,6 +1,11 @@
 from datetime import datetime
-
+# from pony.orm import *
+from pony import orm
 import Pyro4
+
+db = orm.Database()
+
+db.bind(provider='sqlite', filename='database.sqlite', create_db=True)
 
 
 @Pyro4.expose
