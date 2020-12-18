@@ -6,9 +6,21 @@ import Pyro4
 db = orm.Database()
 
 db.bind(provider='sqlite', filename='database.sqlite', create_db=True)
-set_sql_debug(True)
+orm.set_sql_debug(True)
 
-# db.generate_mapping(create_tables=True)
+
+class Person(db.Entity):
+    email = orm.Required(str).is_unique()
+    name = orm.Required(str)
+    lastname = orm.Required(str)
+    picture = orm.Required(str)
+    address = orm.Required(str)
+    formation = orm.Required(str)
+    skills = orm.Required(str)
+    expirience = orm.Required(str)
+
+
+db.generate_mapping(create_tables=True)
 
 
 @Pyro4.expose
