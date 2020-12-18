@@ -25,7 +25,7 @@ class Bot(object):
         else:
             data = 'Opção inválida'
 
-        return data
+        return (data, f'Recebido às {now:%H:%M:%S:%f} \n')
 
 
 def start_server():

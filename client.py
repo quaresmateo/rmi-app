@@ -67,9 +67,10 @@ def start_resquest():
 
         now = datetime.now()
         print(f'Enviado às {now:%H:%M:%S:%f} \n')
-        response = server.send_response(option, data)
+        (response, date) = server.send_response(option, data)
         print(response)
-        scanf = input('`Enter` para continuar...')
+        print(date)
+        scanf = input('\n `Enter` para continuar...')
 
 
 if __name__ == '__main__':
