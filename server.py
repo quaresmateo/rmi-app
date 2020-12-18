@@ -5,7 +5,7 @@ import Pyro4
 
 @Pyro4.expose
 class Bot(object):
-    def send_response(self, option, person):
+    def send_response(self, option, data):
         now = datetime.now()
         print(f'{option} - Recebido às {now:%H:%M:%S:%f} \n')
         if option == '1':
@@ -23,9 +23,9 @@ class Bot(object):
         elif option == '7':
             pass
         else:
-            person = 'Opção inválida'
+            data = 'Opção inválida'
 
-        return person
+        return data
 
 
 def start_server():
