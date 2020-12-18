@@ -7,9 +7,25 @@ import Pyro4
 class Bot(object):
     def send_response(self, option, person):
         now = datetime.now()
-        print(f'{option} {person} - Recebido às {now:%H:%M:%S:%f} \n')
+        print(f'{option} - Recebido às {now:%H:%M:%S:%f} \n')
+        if option == '1':
+            pass
+        elif option == '2':
+            pass
+        elif option == '3':
+            pass
+        elif option == '4':
+            pass
+        elif option == '5':
+            pass
+        elif option == '6':
+            pass
+        elif option == '7':
+            pass
+        else:
+            person = 'Opção inválida'
 
-        return 0
+        return person
 
 
 def start_server():
