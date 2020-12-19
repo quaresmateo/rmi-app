@@ -1,4 +1,4 @@
-Para rodar a aplicação é necessário ter o Pyro 4 instalado e o Pony ORM.
+Para rodar a aplicação é necessário ter o [Pyro 4](https://pypi.org/project/Pyro4/) instalado, [Pony ORM](https://ponyorm.org/) e [print-dict](https://pypi.org/project/print-dict/).
 
 Iniciar localhost
 
