@@ -43,7 +43,8 @@ class Bot(object):
                 )
                 orm.commit()
         elif option == '2':
-            pass
+            persons = Person.select(lambda person: person.formation == data)
+            data = str(persons)
         elif option == '3':
             pass
         elif option == '4':
