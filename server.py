@@ -44,6 +44,7 @@ class Bot(object):
                     expirience=data['expirience']
                 )
                 orm.commit()
+            data = 'Usuário criado com sucesso!'
         elif option == '2':
             with orm.db_session:
                 persons = orm.select(
