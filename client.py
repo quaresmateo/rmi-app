@@ -19,7 +19,7 @@ def start_resquest():
         print('[6] Ver todos os usuários')
         print('[7] Ver infomações de um usuário')
 
-        option = input("... ")
+        option = input("> ")
 
         if(option == "1"):
             # Criar usuário
