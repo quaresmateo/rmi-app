@@ -17,4 +17,4 @@ Iniciar o cliente
 python3 client.py
  ```
 
- Repositório: https://github.com/quaresmateo
+ Repositório: https://github.com/quaresmateo/rmi-app
