@@ -1,7 +1,9 @@
 from datetime import datetime
 # from pony.orm import *
+# from pony.orm.serialization import to_dict
 from pony import orm
 import Pyro4
+import json
 
 db = orm.Database()
 
@@ -43,8 +45,11 @@ class Bot(object):
                 )
                 orm.commit()
         elif option == '2':
-            persons = Person.select(lambda person: person.formation == data)
-            data = str(persons)
+            with orm.db_session:
+                persons = orm.select(
+                    person for person in Person)[:]  # if person.formation == data
+                q = {'data': [p.to_dict() for p in persons]}
+                data = q
         elif option == '3':
             pass
         elif option == '4':
