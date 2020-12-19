@@ -30,6 +30,7 @@ class Bot(object):
     def send_response(self, option, data):
         now = datetime.now()
         print(f'{option} - Recebido às {now:%H:%M:%S:%f} \n')
+
         if option == '1':
             with orm.db_session:
                 # Criar pessoa no banco de dados
@@ -45,18 +46,21 @@ class Bot(object):
                 )
                 orm.commit()
             data = 'Usuário criado com sucesso!'
+
         elif option == '2':
             with orm.db_session:
                 persons = orm.select(
                     person for person in Person if person.formation == data)[:]
                 q = {'data': [p.to_dict() for p in persons]}
                 data = q
+
         elif option == '3':
             with orm.db_session:
                 persons = orm.select(
                     person.skills for person in Person if person.address == data)[:]
                 q = {'data': [p for p in persons]}
                 data = q
+
         elif option == '4':
             pass
         elif option == '5':
