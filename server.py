@@ -52,7 +52,11 @@ class Bot(object):
                 q = {'data': [p.to_dict() for p in persons]}
                 data = q
         elif option == '3':
-            pass
+            with orm.db_session:
+                persons = orm.select(
+                    person.skills for person in Person if person.address == data)[:]
+                q = {'data': [p for p in persons]}
+                data = q
         elif option == '4':
             pass
         elif option == '5':
