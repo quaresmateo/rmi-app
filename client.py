@@ -1,5 +1,6 @@
+import sys
 from datetime import datetime
-
+from print_dict import pd
 import Pyro4
 
 server = Pyro4.Proxy(f"PYRONAME:rmi.server")
@@ -72,7 +73,10 @@ def start_resquest():
         # Resposta e tempo do servidor
         (response, time) = server.send_response(option, data)
 
-        print(response)
+        if option == '1':
+            print(response)
+        else:
+            pd(response)
         print(time)
 
         input('\n `Enter` para continuar...')

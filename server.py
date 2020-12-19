@@ -47,7 +47,7 @@ class Bot(object):
         elif option == '2':
             with orm.db_session:
                 persons = orm.select(
-                    person for person in Person)[:]  # if person.formation == data
+                    person for person in Person if person.formation == data)[:]
                 q = {'data': [p.to_dict() for p in persons]}
                 data = q
         elif option == '3':
