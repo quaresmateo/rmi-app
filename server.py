@@ -73,7 +73,18 @@ class Bot(object):
                 print('Experiênia adicionada!')
 
         elif option == '5':
-            pass
+            with orm.db_session:
+                persons = orm.select(
+                    person for person in Person if person.email == data)[:]
+                q = {'data': [p.to_dict() for p in persons]}
+                person = q['data'][0]
+                name = person['name']
+                lastname = person['lastname']
+                expirience = person['expirience']
+                data = {'name': name + ' ' + lastname,
+                        'expirience': expirience}
+                print('Mostrando experiência por pessoa')
+
         elif option == '6':
             pass
         elif option == '7':
