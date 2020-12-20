@@ -53,16 +53,25 @@ class Bot(object):
                     person for person in Person if person.formation == data)[:]
                 q = {'data': [p.to_dict() for p in persons]}
                 data = q
-
+                print('Mostrando usuário por curso')
         elif option == '3':
             with orm.db_session:
                 persons = orm.select(
                     person.skills for person in Person if person.address == data)[:]
                 q = {'data': [p for p in persons]}
                 data = q
+                print('Solicitação de habilidades por cidade')
 
         elif option == '4':
-            pass
+            with orm.db_session:
+                persons = orm.select(
+                    person for person in Person if person.email == data['email'])[:]
+                q = {'data': [p.to_dict() for p in persons]}
+                person = q['data'][0]
+                id = person['id']
+                Person[id].expirience += f', {data["expirience"]}'
+                print('Experiênia adicionada!')
+
         elif option == '5':
             pass
         elif option == '6':
