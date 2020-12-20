@@ -59,7 +59,7 @@ def start_resquest():
             email = input('Informe o email: ').strip()
             data = email
         elif option == '6':
-            pass
+            data = 'null'
         elif option == '7':
             email = input('Informe o email: ').strip()
             data = email

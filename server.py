@@ -86,7 +86,10 @@ class Bot(object):
                 print('Mostrando experiência por pessoa')
 
         elif option == '6':
-            pass
+            with orm.db_session:
+                persons = orm.select(person for person in Person)[:]
+                data = {'data': [p.to_dict() for p in persons]}
+                print('Mostrando todas as pessoas')
         elif option == '7':
             pass
         else:
