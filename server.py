@@ -91,7 +91,13 @@ class Bot(object):
                 data = {'data': [p.to_dict() for p in persons]}
                 print('Mostrando todas as pessoas')
         elif option == '7':
-            pass
+            with orm.db_session:
+                persons = orm.select(
+                    person for person in Person if person.email == data)[:]
+                q = {'data': [p.to_dict() for p in persons]}
+                data = q['data'][0]
+                print('Mostrando informações de uma pessoa')
+
         else:
             data = 'Opção inválida'
 
