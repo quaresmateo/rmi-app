@@ -28,7 +28,7 @@ def start_resquest():
             name = input('Nome: ')
             lastname = input('Sobrenome: ')
             picture = input('Foto (link): ')
-            address = input('Recidência: ')
+            address = input('Residência: ')
             formation = input('Formação acadêmica: ')
             skills = input('Habilidades: ')
             expirience = input('Experiência: ')
