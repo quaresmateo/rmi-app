@@ -54,6 +54,7 @@ class Bot(object):
                 q = {'data': [p.to_dict() for p in persons]}
                 data = q
                 print('Mostrando usuário por curso')
+
         elif option == '3':
             with orm.db_session:
                 persons = orm.select(
@@ -90,6 +91,7 @@ class Bot(object):
                 persons = orm.select(person for person in Person)[:]
                 data = {'data': [p.to_dict() for p in persons]}
                 print('Mostrando todas as pessoas')
+
         elif option == '7':
             with orm.db_session:
                 persons = orm.select(
